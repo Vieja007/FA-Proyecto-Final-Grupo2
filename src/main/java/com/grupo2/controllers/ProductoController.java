@@ -46,7 +46,7 @@ public class ProductoController {
 
         return "index";
     }
-/*
+
     @GetMapping("/productos/{id}") // http://localhost:8082/productos/1
     public String findById(Model model, @PathVariable Long id) {
         Optional<Producto> productoOpt = productoRepository.findById(id);
@@ -83,7 +83,7 @@ public class ProductoController {
 
         return "producto/producto-form";
     }
-/*
+
     // procesar formulario (crear o actualizar)
     @PostMapping("/productos") // podría ser @PostMapping("/productos/form") si en el formulario pusiera th:action="@{/productos/form}"
     public String saveForm(@ModelAttribute Producto producto) {
@@ -94,7 +94,7 @@ public class ProductoController {
 
     // FILTROS
     // filtrar productos por categoria
-    @GetMapping("/productos/categoria/{categoriaId}") // http://localhost:8080/productos/categoria/1
+    @GetMapping("/productos/categoria/{categoriaId}") // http://localhost:8082/productos/categoria/1
     public String findByCategoria(Model model, @PathVariable Long categoriaId) {
         List<Producto> productos = productoRepository.findByCategoria_Id(categoriaId);
         model.addAttribute("productos", productos);
@@ -105,7 +105,7 @@ public class ProductoController {
 
 
     // filtrar productos por nombre
-    @GetMapping("/productos/buscar") // http://localhost:8080/productos/buscar?nombre=manzana
+    @GetMapping("/productos/buscar") // http://localhost:8082/productos/buscar?nombre=manzana
     public String findByNombre(Model model, @RequestParam("nombre") String nombre) {
         List<Producto> productos = productoRepository.findByNombreContainsIgnoreCase(nombre);
         model.addAttribute("productos", productos);
@@ -114,5 +114,5 @@ public class ProductoController {
 
         return "producto/producto-list";
     }
-*/
+
 }

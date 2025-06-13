@@ -84,8 +84,9 @@ public class CategoriaController {
         return "redirect:/categoria/categorias";
     }
 */
+
     // filtrar categorías por nombre
-    @GetMapping("/categorias/buscar") // http:localhost:8080/categorias/buscar?nombre=frutas
+    @GetMapping("/categorias/buscar") // http:localhost:8082/categorias/buscar?nombre=frutas
     public String findByName(Model model, @RequestParam("nombre") String nombre) {
         List<Categoria> categorias = categoriaRepository.findByNombreContainsIgnoreCase(nombre);
         model.addAttribute("categorias", categorias);
