@@ -34,7 +34,7 @@
                 </a>
                 <div>
                     <h3>Buscar por producto</h3>
-                    <form th:action="@{/productos/buscar}" method="post" class="d-flex gap-2 mb-3">
+                    <form th:action="@{/productos/buscar}" method="get" class="d-flex gap-2 mb-3">
                         <input type="text"
                                name="nombre"
                                th:value="${busquedaActual}"
