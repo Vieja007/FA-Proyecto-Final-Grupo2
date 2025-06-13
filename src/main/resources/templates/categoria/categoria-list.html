@@ -33,20 +33,20 @@
           <i class="bi bi-plus-circle"></i> Nueva Categoria
         </a>
         <div>
-          <h3>Buscar por categoria</h3>
+          <h3>Buscar categoría por nombre:</h3>
           <form th:action="@{/categorias/buscar}" method="get">
             <input type="text"
-                   name="categoria"
+                   name="nombre"
                    th:value="${busquedaActual}"
-                   placeholder="busca una categoria"
-                   minlength="3"></input>
-            <button class="btn btn-sm btn-outline-Success" type="submit">
-              <i class="bi bi-search"></i></button>
+                   placeholder="Escriba el nombre de la categoría">
+            <button type="submit">Buscar</button>
+            <a th:href="@{/categorias}">Limpiar</a>
           </form>
-          <div><a th:href="@{/categorias}">Limpiar filtro</a></div>
+
           <div th:if="${busquedaActual}">
-            <p>Resultados de la busqueda para: <strong th:text="${busquedaActual}"></strong></p>
+            <p>Resultados de búsqueda para: "<strong th:text="${busquedaActual}"></strong>"</p>
           </div>
+
         </div>
 
       </div>
